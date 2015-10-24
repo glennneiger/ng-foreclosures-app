@@ -1,0 +1,18 @@
+<h3>Google Map</h3>
+
+<google-map markers="myPlaces"></google-map>
+
+<table style="width: 98%; margin: 10px auto;">
+  <tr>
+    <th>Title</th>
+    <th>Was clicked</th>
+  </tr>
+  <tr ng-repeat="p in myPlaces">
+    <td>
+      {{p.title}}
+    </td>
+    <td>
+      {{p.selected}}
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="Ng-RealEstates-App">
+<head>
+  <meta charset="utf-8"/>
+  <link href="vendor/css/foundation.css" rel="stylesheet" type="text/css"/>
+  <link href="css/app.css" rel="stylesheet" type="text/css"/>
+  <!-- vendor libs -->
+  <script src="vendor/js/underscore.js"></script>
+  <script src="vendor/js/underscore.string.js"></script>
+  <script src="vendor/js/jquery.js"></script>
+  <script src="vendor/js/angular.js"></script>
+  <script src="vendor/js/angular-ui-router.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <!-- app init -->
+  <script src="js/App.js"></script>
+  <!-- filters -->
+  <script src="js/filters/percentage.js"></script>
+  <script src="js/filters/realEstateType.js"></script>
+  <script src="js/filters/translate.js"></script>
+  <script src="js/filters/paginate.js"></script>
+  <!-- directives -->
+  <script src="js/directives/simpleMap.js"></script>
+  <script src="js/directives/googleMap.js"></script>
+  <script src="js/directives/paginationControls.js"></script>
+  <script src="js/directives/rmDataTable.js"></script>
+  <script src="js/directives/realEstateDetails.js"></script>
+  <!-- services -->
+  <script src="js/repositories/realEstatesRepository.js"></script>
+  <script src="js/services/GoogleMap.js"></script>
+  <script src="js/services/pubSubSrv.js"></script>
+  <script src="js/services/realEstatesSrv.js"></script>
+  <!-- controllers -->
+  <script src="js/controllers/data-table-view/DataTableViewController.js"></script>
+  <script src="js/controllers/datepicker-view/DatepickerViewController.js"></script>
+  <script src="js/controllers/map-search-view/MapSearchViewController.js"></script>
+  <script src="js/controllers/map-search-view/MapController.js"></script>
+  <script src="js/controllers/map-search-view/DetailsController.js"></script>
+  <script src="js/controllers/map-search-view/ListController.js"></script>
+  <script src="js/controllers/google-map-view/GoogleMapViewController.js"></script>
+  <!-- app bootstrap -->
+  <script src="js/routes.js"></script>
+</head>
+<body>
+
+<nav class='top-bar' data-topbar>
+  <ul class='title-area'>
+    <li class='name'>
+      <h1>
+        <a ui-sref="dashboard">Real Estates App</a>
+      </h1>
+    </li>
+  </ul>
+  <section class='top-bar-section'>
+    <ul class='right'>
+      <li>
+        <a ui-sref="data-table">Data Table</a>
+      </li>
+      <li>
+        <a ui-sref="google-map">Google Map</a>
+      </li>
+      <li>
+        <a ui-sref="map-search">Map Search</a>
+      </li>
+      <li>
+        <a ui-sref="datepicker">Date Picker</a>
+      </li>
+    </ul>
+  </section>
+</nav>
+<div class='row main'>
+  <div ui-view></div>
+</div>
+
+<div id="map" style="width: 800px; height: 600px;"></div>
+
+<div class='zurb-footer-bottom'>
+  <div class='row'>
+    &copy; Copyright Piotr Woloszun
+  </div>
+</div>
+<script src="vendor/js/foundation.js"></script>
+</body>
+</html>

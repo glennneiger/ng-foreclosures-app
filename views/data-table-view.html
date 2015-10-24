@@ -1,0 +1,7 @@
+<h3>Dashboard TODO</h3>
+
+<h3>Selected: {{selectedHero.name}}</h3>
+<rm-data-table items="superHeroes"
+               selected-item="selectedHero"
+               headers="tableHeaders"
+               item-click="onHeroClick(item)"></rm-data-table>
