@@ -2,32 +2,19 @@ App.directive("googleMap", [
   "GoogleMap",
   function(GoogleMap) {
 
-    var link = function(scope, element) {
-      var map = new GoogleMap(element);
+    // TODO: create map
+    //var map = new GoogleMap(element);
 
-      scope.$watch("markers", function() {
-        if (scope.markers) {
-          for (var i = 0; i < scope.markers.length; i++) {
-            var object = scope.markers[i];
-            var marker = map.addMarker(object);
-            marker.on("click", function(obj) {
-              scope.$emit("google-map:marker:click", obj);
-              scope.$apply();
-            });
-          }
-          //map.fitMarkerBounds();
-        }
-      });
-    };
+    // TODO 2: add markers to map
+    //var marker = map.addMarker(object);
+
+    // TODO 3: handle marker click event - emit ng event
+    //marker.on("click", function(obj) {
+    //});
 
     return {
-      scope: {
-        markers: "="
-      },
       restrict: "E",
-      replace: true,
-      link: link,
-      templateUrl: "templates/googleMap.html"
+      replace: true
     };
   }
 ]);

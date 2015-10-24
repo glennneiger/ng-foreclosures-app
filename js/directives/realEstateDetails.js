@@ -1,11 +1,10 @@
 App.directive("realEstateDetails", [
   function() {
+    //TODO
+
     return {
-      scope: {
-        realEstate: "="
-      },
-      replace: true,
-      templateUrl: "templates/real-estate-details.html"
+      restrict: "E",
+      replace: true
     };
   }
 ]);

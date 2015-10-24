@@ -11,10 +11,7 @@ App.controller("GoogleMapViewController", [
       {title: "Szczecin", lat: 53.25, lng: 14.35}
     ];
 
-    $scope.$on("google-map:marker:click", function(event, place) {
-      var now = new Date();
-      place.selected = "Selected at: " + now.toString();
-    });
+    // TODO: handle marker click event - set place.selected = Math.random();
 
   }
 ]);

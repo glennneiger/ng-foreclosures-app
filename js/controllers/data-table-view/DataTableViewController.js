@@ -9,15 +9,17 @@ App.controller("DataTableViewController", [
       {id: 103, name: "Wolverine", secretIdentity: "Logan", universe: "Marvel"}
     ];
 
-    $scope.tableHeaders = [
-      {value: "universe", text: "Comic Universe"},
-      {value: "name", text: "Hero Name"},
-      {value: "secretIdentity", text: "True Identity"}
-    ];
+    // TODO 2
+    //$scope.onHeroClick = function(superHero) {
+    //  console.log("clicked super hero", superHero);
+    //  $scope.selectedHero = superHero;
+    //};
 
-    $scope.onHeroClick = function(superHero) {
-      console.log("clicked super hero", superHero);
-      $scope.selectedHero = superHero;
-    };
+    // TODO 3
+    //$scope.tableHeaders = [
+    //  {value: "universe", text: "Comic Universe"},
+    //  {value: "name", text: "Hero Name"},
+    //  {value: "secretIdentity", text: "True Identity"}
+    //];
   }
 ]);

@@ -1,15 +1,11 @@
 App.directive("rmDataTable", [
   function() {
+
+    // TODO
+
     return {
       replace: true,
-      restrict: "E",
-      scope: {
-        items: "=",
-        selectedItem: "=",
-        headers: "=",
-        itemClick: "&"
-      },
-      templateUrl: "templates/rmDataTable.html"
+      restrict: "E"
     };
   }
 ]);

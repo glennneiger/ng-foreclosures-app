@@ -3,9 +3,7 @@ App.controller("MapController", [
   "realEstatesSrv",
   function($scope, realEstatesSrv) {
 
-    $scope.$on("google-map:marker:click", function(event, realEstate) {
-      realEstatesSrv.toggleSelected(realEstate);
-    });
+    // TODO: handle on marker click event - toggle selectd real estate
 
   }
 ]);

@@ -6,7 +6,9 @@ App.controller("MapSearchViewController", [
 
     realEstatesRepository.getAll(function(realEstatesJson) {
       console.log('loaded', realEstatesJson);
-      realEstatesSrv.setAll(realEstatesJson);
+
+      // TODO: implement realEstatesSrv
+      //realEstatesSrv.setAll(realEstatesJson);
     });
 
     $scope.realEstatesSrv = realEstatesSrv;

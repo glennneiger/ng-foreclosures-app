@@ -9,8 +9,6 @@ App.controller("ListController", [
       {value: "price", text: "Cena"},
     ];
 
-    $scope.onRealEstateClick = function(realEstate) {
-      realEstatesSrv.toggleSelected(realEstate);
-    };
+    // TODO: handle rm-data-table item-click
   }
 ]);
