@@ -8,18 +8,22 @@ App.config([
     };
 
     $urlRouterProvider.otherwise("/");
-    $stateProvider.state('data-table', {
+    $stateProvider.state('dashboard', {
       url: "/",
+      templateUrl: ctrlTemplateUrl("dashboard-view"),
+      controller: "DashboardViewController"
+    }).state('other', {
+      url: "/other",
+      templateUrl: ctrlTemplateUrl("other-view"),
+      controller: "OtherViewController"
+    }).state('data-table', {
+      url: "/data-table",
       templateUrl: ctrlTemplateUrl("data-table-view"),
       controller: "DataTableViewController"
     }).state('map-search', {
       url: "/map-search",
       templateUrl: ctrlTemplateUrl("map-search-view"),
       controller: "MapSearchViewController"
-    }).state('datepicker', {
-      url: "/datepicker",
-      templateUrl: ctrlTemplateUrl("datepicker-view"),
-      controller: "DatePickerViewController"
     }).state('google-map', {
       url: "/google-map",
       templateUrl: ctrlTemplateUrl("google-map-view"),

@@ -14,14 +14,10 @@
   <!-- app init -->
   <script src="js/App.js"></script>
   <!-- filters -->
-  <script src="js/filters/percentage.js"></script>
   <script src="js/filters/realEstateType.js"></script>
   <script src="js/filters/translate.js"></script>
-  <script src="js/filters/paginate.js"></script>
   <!-- directives -->
-  <script src="js/directives/simpleMap.js"></script>
   <script src="js/directives/googleMap.js"></script>
-  <script src="js/directives/paginationControls.js"></script>
   <script src="js/directives/rmDataTable.js"></script>
   <script src="js/directives/realEstateDetails.js"></script>
   <!-- services -->
@@ -30,8 +26,9 @@
   <script src="js/services/pubSubSrv.js"></script>
   <script src="js/services/realEstatesSrv.js"></script>
   <!-- controllers -->
+  <script src="js/controllers/dashboard-view/DashboardViewController.js"></script>
+  <script src="js/controllers/other-view/OtherViewController.js"></script>
   <script src="js/controllers/data-table-view/DataTableViewController.js"></script>
-  <script src="js/controllers/datepicker-view/DatepickerViewController.js"></script>
   <script src="js/controllers/map-search-view/MapSearchViewController.js"></script>
   <script src="js/controllers/map-search-view/MapController.js"></script>
   <script src="js/controllers/map-search-view/DetailsController.js"></script>
@@ -53,6 +50,12 @@
   <section class='top-bar-section'>
     <ul class='right'>
       <li>
+        <a ui-sref="dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a ui-sref="other">Other</a>
+      </li>
+      <li>
         <a ui-sref="data-table">Data Table</a>
       </li>
       <li>
@@ -60,9 +63,6 @@
       </li>
       <li>
         <a ui-sref="map-search">Map Search</a>
-      </li>
-      <li>
-        <a ui-sref="datepicker">Date Picker</a>
       </li>
     </ul>
   </section>
