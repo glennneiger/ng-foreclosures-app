@@ -23,7 +23,7 @@ App.factory("GoogleMap", [
       this._latLngs = [];
     };
 
-    GoogleMap.prototype.addMarker = function(object) {
+    GoogleMap.prototype.createMarker = function(object) {
       var latLng = {lat: object.lat, lng: object.lng};
       this._latLngs.push(latLng);
       var marker = new gm.Marker({

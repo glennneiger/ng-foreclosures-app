@@ -6,10 +6,10 @@ App.directive("googleMap", [
     //var map = new GoogleMap(element);
 
     // TODO 2: add markers to map
-    //var marker = map.addMarker(object);
+    //var marker = map.createMarker(geoLocation);
 
     // TODO 3: handle marker click event - emit ng event
-    //marker.on("click", function(obj) {
+    //marker.on("click", function(geoLocation) {
     //});
 
     return {
