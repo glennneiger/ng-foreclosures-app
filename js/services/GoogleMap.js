@@ -1,20 +1,30 @@
 App.factory("GoogleMap", [
-  function() {
-    var gm = google.maps;
+  "$window",
+  function ($window) {
+    var gm = $window.google.maps;
+    var HIGHLIGHTED_ICON = 'css/marker-icon-2x.png';
 
-    var Marker = function(googleMarker, object) {
+    var Marker = function (googleMarker, object) {
       this._marker = googleMarker;
       this._object = object;
     };
 
-    Marker.prototype.on = function(eventName, listenerFn) {
+    Marker.prototype.on = function (eventName, listenerFn) {
       var that = this;
-      this._marker.addListener(eventName, function() {
+      this._marker.addListener(eventName, function () {
         listenerFn.call(that._marker, that._object)
       });
     };
 
-    var GoogleMap = function(element, options) {
+    Marker.prototype.highlight = function (isHighlighted) {
+      this._marker.setIcon(isHighlighted ? HIGHLIGHTED_ICON : null);
+    };
+
+    Marker.prototype.matches = function (object) {
+      return this._object === object;
+    };
+
+    var GoogleMap = function (element, options) {
       this._map = new gm.Map(element[0], {
         center: {lat: 52.14, lng: 21.0},
         zoom: 6
@@ -23,19 +33,18 @@ App.factory("GoogleMap", [
       this._latLngs = [];
     };
 
-    GoogleMap.prototype.createMarker = function(object) {
+    GoogleMap.prototype.createMarker = function (object) {
       var latLng = {lat: object.lat, lng: object.lng};
       this._latLngs.push(latLng);
       var marker = new gm.Marker({
         position: latLng,
-        map: this._map,
-        title: object.title
+        map: this._map
       });
       this._markers.push(marker);
       return new Marker(marker, object);
     };
 
-    GoogleMap.prototype.fitMarkerBounds = function() {
+    GoogleMap.prototype.fitMarkerBounds = function () {
       var lats = _(this._latLngs).pluck("lat");
       var lngs = _(this._latLngs).pluck("lng");
       var south = _(lats).min();

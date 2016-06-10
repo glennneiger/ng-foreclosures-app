@@ -1,7 +1,9 @@
 <h3>Map Search</h3>
 <div class="top-container clearfix">
   <div ng-controller="MapController" class="map-container">
-    <google-map markers="realEstatesSrv.realEstates"></google-map>
+    <google-map
+      geo-locations="realEstatesSrv.realEstates"
+      selected="realEstatesSrv.selectedRealEstate"></google-map>
   </div>
 
   <div ng-controller="DetailsController" class="details-container">
@@ -10,10 +12,8 @@
 </div>
 <div ng-controller="ListController" class="list-container">
   <rm-data-table
-      items="realEstatesSrv.realEstates"
-      selected-item="realEstatesSrv.selectedRealEstate"
-      headers="listHeaders"
-      item-click="onRealEstateClick"></rm-data-table>
+    items="realEstatesSrv.realEstates"
+    selected-item="realEstatesSrv.selectedRealEstate"
+    headers="listHeaders"
+    item-click="onRealEstateClick"></rm-data-table>
 </div>
-
-
