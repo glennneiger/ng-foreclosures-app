@@ -16,7 +16,7 @@ App.factory("GoogleMap", [
       });
     };
 
-    Marker.prototype.highlight = function (isHighlighted) {
+    Marker.prototype.togglHighlight = function (isHighlighted) {
       this._marker.setIcon(isHighlighted ? HIGHLIGHTED_ICON : null);
     };
 
